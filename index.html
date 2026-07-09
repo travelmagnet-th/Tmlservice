@@ -5,9 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็บแอป</title>
+    <title>TML Service | Travel Magnet</title>
+    
+    <style>
+        /* รีเซ็ตขอบขาวและซ่อนแถบเลื่อนของหน้าเว็บหลัก */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; 
+            background-color: #f8fafc;
+        }
+        
+        /* กล่องครอบ Iframe สำหรับใช้เทคนิคซ่อนแบนเนอร์ */
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ดัน Iframe ขึ้นไปด้านบน 45px เพื่อให้แถบของ Google หลุดกรอบหายไป */
+        .iframe-container iframe {
+            position: absolute;
+            top: -45px; 
+            left: 0;
+            width: 100%;
+            height: calc(100% + 45px); /* เพิ่มความสูงชดเชยส่วนที่ถูกดันขึ้นไป */
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <iframe style="width: 100%; height: 100vh;" scrolling="yes" src="https://script.google.com/macros/s/AKfycbwj4dgXuwsUp2ybzTMPz0AFcrcRZL3fBRBbjvadj6EOagI6N6Y6vEp7hsb6_nOq_-tSlg/exec" frameborder="0"></iframe>
+    <div class="iframe-container">
+        <iframe 
+            src="https://script.google.com/macros/s/AKfycbwj4dgXuwsUp2ybzTMPz0AFcrcRZL3fBRBbjvadj6EOagI6N6Y6vEp7hsb6_nOq_-tSlg/exec" 
+            allow="clipboard-read; clipboard-write" 
+            scrolling="yes">
+        </iframe>
+    </div>
 </body>
 </html>
